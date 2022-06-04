@@ -6,11 +6,13 @@
 */
 
 import { defineBootComponent } from "../BootHelper";
+import { initAjaxPrefilter } from "../Items/AjaxPrefilter";
 import { initCoreStylesheet } from "../Items/CoreStylesheet";
 import { initFeatureFlags } from "../Items/FeatureFlags";
+import { fixColumnAnimations } from "../Items/FixColumnAnimations";
+import { initFunctionPatcher } from "../Items/InitFunctionPatcher";
 import { initInjectFonts } from "../Items/InjectFonts";
 import { initLateBootScreen } from "../Items/LateBootScreen";
-import { initPreferences } from "../Items/LoadPreferences";
 import { initProcessMustaches } from "../Items/MustachePatcher";
 import { replacePrettyNumber } from "../Items/PrettyNumber";
 import { runtimeStylesheetExtensions } from "../Items/RuntimeStylesheetExtensions";
@@ -25,6 +27,8 @@ export const lowlevelStage = async () => {
     await defineBootComponent(replacePrettyNumber);
     await defineBootComponent(runtimeStylesheetExtensions);
     await defineBootComponent(initProcessMustaches);
+    await defineBootComponent(initAjaxPrefilter);
     await defineBootComponent(initI18nEngine);
-    await defineBootComponent(initPreferences);
+    await defineBootComponent(initFunctionPatcher);
+    await defineBootComponent(fixColumnAnimations);
 }

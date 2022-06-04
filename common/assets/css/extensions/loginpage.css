@@ -1,0 +1,229 @@
+/*
+	loginpage.css
+
+	Copyright (c) 2014-2022 dangered wolf, et al
+	Released under the MIT License
+*/
+
+@keyframes startflowIn {
+
+	0% {
+		opacity:0;
+		transform:translateY(20px) scale(1.1,1.1);
+	}
+
+	100% {
+		opacity:1;
+		transform:scale(1,1);
+	}
+
+}
+
+@keyframes materialLoginIn {
+
+	0% {
+		opacity:0;
+		border-radius:200px;
+		transform:translateY(30px)
+	}
+
+	100% {
+		opacity:1;
+		border-radius:4px;
+		transform:translateY(0)
+	}
+
+}
+
+img.spinner-centered {
+	display:none
+}
+
+html:not(.signin-sheet-now-present) body {
+	background:#263238!important
+}
+
+.startflow ::selection {
+	background:var(--selectionBackgroundColor);
+	color:inherit
+}
+
+.startflow a:active,.signin-sheet-now-present .startflow .btn-positive,.startflow a:hover,.startflow a:focus,.startflow .btn:not([disabled]):not(.is-disabled),.startflow .btn-positive,.startflow .btn-positive-alt,.startflow .btn-fav.s-favorited,.startflow .s-following .follow-btn,.startflow a {
+	color:#00BCD4
+}
+
+.startflow .btn:not(.btn-positive):active,.startflow .btn.is-selected {
+	background-color:rgba(0,0,0,.04)!important
+}
+
+.startflow {
+	top:-40px;
+	bottom:0;
+	left:0;
+	right:0;
+	position:absolute
+}
+
+.app-signin-wrap {
+	position:relative;
+	max-width:360px;
+	top:50%;
+	margin:auto;
+	margin-top:-128px
+}
+
+.startflow .form-legend {
+	text-align:left;
+	font-weight:500;
+	font-size:20px
+}
+
+.startflow-panel,.startflow-panel-rounded {
+	opacity:0.01;
+	animation:materialLoginIn .4s .35s cubic-bezier(.19,1,.22,1);
+	animation-fill-mode:both;
+    background: var(--backdropColor);
+    color: var(--bodyTextColor);
+	box-shadow:0 10px 30px rgba(0,0,0,.75);
+	border-radius:4px;
+	margin-top:20px
+}
+
+.form-error-message {
+	color:#DE798A;
+	font-size:20px
+}
+
+.startflow-background {
+	background-image:url("moderndeck://assets/img/bg1.webp");
+	background-size:cover;
+	background-position:center;
+	opacity:0.01;
+	animation:startflowIn .6s .1s cubic-bezier(.19,1,.22,1);
+	animation-fill-mode:both
+}
+
+.startflow-background:before {
+	content:"";
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	opacity:.8;
+	background-image:linear-gradient(#00000075 0%,transparent 75%)
+}
+
+.login-container {
+	top:0;
+	position:absolute;
+	right:0;
+	left:0;
+	bottom:0;
+	height:auto;
+	overflow:hidden;
+	-webkit-app-region:no-drag
+}
+
+.form-login h2 {
+	font-weight:400;
+	font-size:22px;
+	margin-bottom:35px
+}
+
+@keyframes menuDownLoginError {
+	0% {margin-top:-30px;opacity:0}
+	100% {margin-top:0;opacity:1}
+}
+
+.js-login-error-message {
+	animation:menuDownLoginError .5s cubic-bezier(.19,1,.22,1)
+}
+
+.app-signin-form .cf.margin-txs {
+	font-size:0;
+	padding-top:18px
+}
+
+.login-container .btn-positive {
+	width:259px!important;
+	padding:15px 0 8px 24px;
+	text-align:center;
+	text-transform:none;
+	font-size:18px;
+	margin-top:20px!important;
+	padding-top:14px!important;
+	margin-bottom:-15px!important
+}
+
+.login-container .btn-positive:before {
+	font-family:MD;
+	content:"\f000";
+	font-size:26px;
+	vertical-align:middle;
+	line-height:0;
+	margin-left:-39px;
+	padding-right:25px;
+	position:absolute;
+	margin-top:13px
+}
+
+.form-login .padding-axl:not(.form-legend) {
+	display:none
+}
+
+.form-login h3 {
+	display:inline;
+	padding-bottom:36px;
+	white-space:nowrap
+}
+
+.form-login h2 {
+	font-weight:700!important;
+}
+
+.mtd-app .login-container:before {
+	content:"";
+	position:absolute;
+	display:block;
+	top:0;
+	left:0;
+	right:0;
+	height:40px;
+	-webkit-app-region:drag
+}
+
+.mtd-signin-wrap .icon-moderndeck {
+	font-size:78px;
+	display:block;
+	position:absolute;
+	top:10px;
+	right:10px;
+	opacity:0.3
+}
+
+.app-info {
+	display:none
+}
+
+.form-login .Button {
+	padding-left:28px!important;
+	margin-left:-3px!important
+}
+
+.mtd-login-info-button {
+	color:#fff
+}
+
+.mtd-login-info-version {
+	float:left;
+	padding-top:8px;
+	opacity:0.7;
+	font-size:13px
+}
+
+.mtd-login-info {
+	position:fixed;
+	bottom:0;
+	right:0
+}

@@ -6,7 +6,7 @@
 */
 
 import { isApp } from "./Utils";
-import { dumpPreferences } from "./StoragePreferences";
+import { dumpPreferencesString } from "./StoragePreferences";
 import { version } from "../package.json";
 import { I18n } from "./I18n";
 import { UIAlert } from "./UIAlert";
@@ -21,6 +21,7 @@ export const diag = (): void => {
 	let log = "";
 
 	log += `\nModernDeck ${version} (Build ${window.ModernDeck.buildNumber})`;
+	log += `\nBuilt ${window.ModernDeck.buildDate}`;
 
 	log += `\n\nPlatform: `;
 
@@ -57,7 +58,7 @@ export const diag = (): void => {
 
 	log += loadedExtensions.join(", ");
 
-	log += `\n\nUser preferences: \n${dumpPreferences()}`;
+	log += `\n\nUser preferences: \n${dumpPreferencesString()}`;
 
 	console.log(log);
 

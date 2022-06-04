@@ -1,7 +1,8 @@
 /*
-	TweetDeck i18n v2
-	Copyright (c) 2018-2022 dangered wolf, et al.
-	Released under the MIT license
+	I18n.js
+
+	Copyright (c) 2014-2022 dangered wolf, et al
+	Released under the MIT License
 */
 
 "use strict";
@@ -21,6 +22,22 @@ let langRoot;
 langFull = getPref("mtd_lang");
 if (!langFull) {
 	langFull = navigator.language.replace("-","_");
+
+	// Some generic languages only have local versions in ModernDeck so we use these as fallbacks
+	switch(langFull) {
+		case "en":
+			langFull = "en_US";
+			break;
+		case "es":
+			langFull = "es_ES";
+			break;
+		case "zh":
+			langFull = "zh_CN";
+			break;
+		case "fr":
+			langFull = "fr_FR";
+			break;
+	}
 }
 langRoot = langFull.substring(0,2);
 
@@ -38,7 +55,6 @@ export const getFallbackLanguage = () => {
 			return "en_US";
 	}
 };
-
 
 const mustachePatches = {
 	"keyboard_shortcut_list.mustache": {

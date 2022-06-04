@@ -84,15 +84,14 @@ let tab: ModernDeckSettingsTab = {
 							enableStylesheetExtension("darker");
 							window.html.addClass("mtd-dark").removeClass("mtd-light");
 							break;
-							
 						case "discorddark":
 							disableStylesheetExtension("amoled");
 							disableStylesheetExtension("light");
 							disableStylesheetExtension("paper");
-							disableStylesheetExtension("darker");
 							disableStylesheetExtension("twitterdark");
-							enableStylesheetExtension("discorddark");
 							enableStylesheetExtension("dark");
+							enableStylesheetExtension("darker");
+							enableStylesheetExtension("discorddark");
 							window.html.addClass("mtd-dark").removeClass("mtd-light");
 							break;
 						case "twitterdark":
@@ -101,8 +100,8 @@ let tab: ModernDeckSettingsTab = {
 							disableStylesheetExtension("paper");
 							disableStylesheetExtension("darker");
 							disableStylesheetExtension("discorddark");
-							enableStylesheetExtension("twitterdark");
 							enableStylesheetExtension("dark");
+							enableStylesheetExtension("twitterdark");
 							window.html.addClass("mtd-dark").removeClass("mtd-light");
 							break;
 						case "amoled":
@@ -154,7 +153,7 @@ let tab: ModernDeckSettingsTab = {
 				// custom:{value:"custom",text:"{{Custom...}}"}
 			},
 			settingsKey:"mtd_theme",
-			default:() => TD.settings.getTheme() === "dark" ? "darker" : "light"
+			default:"darker"
 		},
 		themeColor:{
 			title:"{{Theme Color}}",
@@ -202,6 +201,7 @@ let tab: ModernDeckSettingsTab = {
 				OpenSans:{value:"OpenSans",text:"Open Sans"},
 				Lato:{value:"Lato",text:"Lato"},
 				Jost:{value:"Jost",text:"Jost"},
+				Inter:{value:"Inter",text:"Inter"},
 				SystemUI:{value:"SystemUI", text:"{{System UI}}"}
 			},
 			activate:{
@@ -242,7 +242,6 @@ let tab: ModernDeckSettingsTab = {
 			"}",
 			activate:{
 				func: (opt: string): void => {
-					setPref("mtd_customcss",opt);
 					enableCustomStylesheetExtension("customcss",opt);
 				}
 			},

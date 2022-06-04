@@ -201,7 +201,7 @@ export const mtdAppFunctions = (): void => {
 
 	}
 
-	ipcRenderer.on("context-menu", (_event: Event, menuContents) => {
+	ipcRenderer.on("context-menu", (_event: Event, menuContents: any) => {
 		let theMenu = buildContextMenu(menuContents);
 		let Menu = window.require("@electron/remote").Menu;
 
@@ -210,8 +210,7 @@ export const mtdAppFunctions = (): void => {
 			return;
 		} else {
 			if (typeof (theMenu) !== "undefined")
-				// @ts-ignore - Always an instance of jQuery<HTMLElement> in this case
-				window.body.append(theMenu);
+				window.body.append(theMenu as JQuery<HTMLElement>);
 		}
 	});
 

@@ -144,7 +144,8 @@ export interface TweetDeckObject {
 
 interface TweetDeckCache {
 	twitterUsers: {
-		getByScreenName: (screen_name: string) => {results: TwitterUserInternal[]}
+		getByScreenName: (screen_name: string) => JQuery.Deferred<TwitterUserInternal>;
+		getById: (id: string | number) => JQuery.Deferred<TwitterUserInternal>;
 	};
 	lists: unknown;
 	names: Names;
@@ -276,16 +277,18 @@ export interface TweetDeckControllerRelationshipResult {
 }
 
 export interface TwitterUserInternal {
-    ext_has_nft_avatar: any;
+	emojifiedName: string;
+    ext_has_nft_avatar: boolean;
+	following?: boolean;
 	id_str: string;
 	screen_name: string;
 	profileBannerURL: string;
 	_profileBannerURL: string;
 	profileImageURL: string;
+	profileURL: string;
 	name: string;
 	screenName: string;
-	results: {
-	};
+	results: {};
 }
 
 export interface TweetDeckControllerClient {
@@ -303,6 +306,7 @@ export interface TweetDeckControllerClient {
 	unblockUser(id: string): void;
 	addIdToBlockList(id: string): void;
 	removeIdFromBlockList(id: string): void;
+	followUser(screenName: string): void;
 	showFriendship(
 		userId: string,
 		targetUserId: string | null,
@@ -351,8 +355,8 @@ interface TweetDeckController {
 			exact: boolean;
 			id: string;
 		}): void;
-		_addFilter(type: string, value: string): void;
-		addFilter(type: string, value: string): void;
+		_addFilter(type: string, value: string, positive?: boolean): void;
+		addFilter(type: string, value: string, positive?: boolean): void;
 		getAll(): ReadonlyArray<{
 			type: string;
 			value: string;

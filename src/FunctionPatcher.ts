@@ -6,8 +6,9 @@
 */
 
 import { ColumnChirp } from "./Types/TweetDeck";
+import { getIpc } from "./Utils";
 
-const pretendToBeWrapperApp = true;
+const pretendToBeWrapperApp = false;
 
 export const FunctionPatcher = (): void => {
 	if (window.localStorage && typeof window.require === "undefined") {
@@ -24,7 +25,7 @@ export const FunctionPatcher = (): void => {
 			window.localStorage.removeItem("typeaheadUserLastPrefetch");
 		}
 	}
-	if (TD && TD.util && pretendToBeWrapperApp) {
+	if (typeof TD?.util !== "undefined" && pretendToBeWrapperApp) {
 		TD.util.isWrapperApp = () => true;
 		window.deck = {
 			osname:() => {
@@ -50,6 +51,7 @@ export const FunctionPatcher = (): void => {
 						}
 					})
 					TD.ui.updates.showDetailView(col, tweetObj);
+					getIpc().send("focus");
 				}
 			},
 			setTheme:(str): void => {console.log("Theme: "+str)},

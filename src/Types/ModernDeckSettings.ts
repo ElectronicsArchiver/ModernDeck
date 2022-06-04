@@ -21,10 +21,15 @@ export enum ModernDeckSettingsType {
 	TEXTBOX = "textbox",
 	TEXTAREA = "textarea",
 	BUTTON = "button",
-	BUTTONS = "buttons",
+	BUTTONGROUP = "buttongroup",
 	LINK = "link",
 	ARRAY = "array",
 	SUBTEXT = "subtext",
+}
+
+export enum ModernDeckSettingsEnumPage {
+	ABOUT = "about",
+	MUTES = "mutes"
 }
 
 export interface ModernDeckSettingsActions {
@@ -68,4 +73,5 @@ export interface ModernDeckSettingsOption {
 	maximum?: number;
 	displayUnit?: string;
 	savePreference?: boolean;
+	instantApply?: boolean;
 }

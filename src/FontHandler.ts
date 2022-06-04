@@ -48,7 +48,7 @@ export function injectFonts() {
 	$(document.head).append(make("style").html(
 		fontParseHelper({family:"MD",name:"Icon/ModernDeckVectors"}) +
 		fontParseHelper({family:"Material",name:"Icon/MaterialIcons"}) +
-
+		fontParseHelper({family:"MaterialSymbols",name:"Icon/MaterialSymbols"}) +
 		/* Roboto Family */
 		fontParseHelper({family:"Roboto",name:"Roboto/400-cyrillicext",range:"U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"}) +
 		fontParseHelper({family:"Roboto",name:"Roboto/400-cyrillic",range:"U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116"}) +
@@ -226,6 +226,12 @@ export function injectFonts() {
 		fontParseHelper({family:"Noto Sans",weight:"500",name:"NotoSans/NotoSansTibetan-Bold",range:"U+0F00-0FFF"}) +
 		fontParseHelper({family:"Noto Sans",weight:"500",name:"NotoSans/NotoSansTifinagh-Regular",range:"U+2D30-2D7F"}) +
 		fontParseHelper({family:"Noto Sans",weight:"500",name:"NotoSans/NotoSansVai-Regular",range:"U+A500-A63F"}) +
-		fontParseHelper({family:"Noto Sans",weight:"500",name:"NotoSans/NotoSansYi-Regular",range:"U+A000-A48F"})
+		fontParseHelper({family:"Noto Sans",weight:"500",name:"NotoSans/NotoSansYi-Regular",range:"U+A000-A48F"}) +
+
+		// Inter
+		fontParseHelper({family:"Inter",name:"Inter/Inter-Regular",range:"U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"}) +
+		fontParseHelper({family:"Inter",weight:"500",name:"Inter/Inter-Medium",range:"U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"}) +
+		fontParseHelper({family:"Inter",weight:"600",name:"Inter/Inter-SemiBold",range:"U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"}) +
+		fontParseHelper({family:"Inter",weight:"700",name:"Inter/Inter-Bold",range:"U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"})
 	));
 }

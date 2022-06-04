@@ -1,12 +1,12 @@
 /*
-	SettingsInit.ts
+	Settings/SettingsInit.ts
 
 	Copyright (c) 2014-2022 dangered wolf, et al
 	Released under the MIT License
 */
 
 import { settingsData } from "./SettingsData";
-import { ModernDeckPrefMigration } from "../ModernDeckPrefMigration";
+import { SettingsMigration } from "./SettingsMigration";
 import { disableStylesheetExtension, enableStylesheetExtension } from "../StylesheetExtensions";
 import { getPref, setPref, hasPref, debugStorageSys } from "../StoragePreferences";
 import { SettingsTab } from "./SettingsData";
@@ -19,8 +19,9 @@ import { SettingsTab } from "./SettingsData";
 
 export const loadPreferences = (): void => {
 	window.settingsData = settingsData;
+	window.ModernDeck.settingsData = settingsData;
 
-	ModernDeckPrefMigration.migrate();
+	SettingsMigration.migrate();
 
 	Object.keys(settingsData).map((key: SettingsTab): void => {
 

@@ -39,9 +39,13 @@ declare global {
             platformName: string;
             productName: string;
             systemName: string;
+            buildDate?: string;
             buildNumber: number;
             settingsData?: any;
+            SyncController?: any;
             store?: any;
+            enableStylesheetExtension?: (name: string) => void;
+            disableStylesheetExtension?: (name: string) => void;
         };
         deck: {
 			osname:() => string;
@@ -53,12 +57,12 @@ declare global {
 			authenticateOn:() => {hide:() => void, deleteLater:() => void};
 			closeLoadingScreen:() => void;
 		};
-        settingsUIRefactorTest: any;
         store: any; // This is any only because Electron-Store does not exist on browser;
         mR: ModuleRaid;
         html: JQuery;
         body: JQuery;
         head: JQuery;
+        mtdLoadStyleCSS: string;
         useNativeContextMenus: boolean;
         desktopConfig: DesktopConfig;
         mtdPrepareWindows: () => void;
@@ -90,6 +94,7 @@ declare global {
         mtd_nav_drawer_background: HTMLElement;
         mtd_nav_drawer: HTMLElement;
         languageData: {};
+        loginInterval: any;
     }
 }
 

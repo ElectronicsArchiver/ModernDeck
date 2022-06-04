@@ -1,0 +1,188 @@
+/*
+	coredefinitions.css
+
+	Copyright (c) 2014-2022 dangered wolf, et al
+	Released under the MIT License
+*/
+
+body
+{
+	margin:0
+}
+
+button,
+input,
+select,
+textarea,
+label,
+a
+{
+	font:inherit;
+	text-decoration:none;
+	pointer-events:all
+}
+
+input,
+select
+{
+	margin:0;
+	padding:0;
+	border:0;
+	font:inherit;
+	line-height:1;
+	word-break:normal!important;
+	word-wrap:normal!important
+}
+
+label,
+input,
+textarea,
+select,
+.uneditable-input
+{
+	display:inline-block;
+	width:85%;
+	height:32px;
+	padding:4px 8px;
+	font-size:14px;
+	font-weight:400;
+	line-height:18px;
+	border-radius:0;
+	box-sizing:content-box;
+	background:transparent
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.uneditable-input:focus
+{
+	outline:0
+}
+
+input[type="checkbox"],
+input[type="radio"]
+{
+	width:auto;
+	height:auto;
+	cursor:pointer;
+	border:0;
+	vertical-align:middle;
+	padding:0;
+	margin-right:10px
+}
+
+input[type="button"],
+input[type="reset"],
+input[type="submit"]
+{
+	width:auto;
+	height:auto
+}
+
+label
+{
+	display:block;
+	margin-bottom:12px;
+	line-height:inherit
+}
+
+fieldset
+{
+	padding:0;
+	margin:0;
+	border:0
+}
+
+select
+{
+	-webkit-appearance:menulist;
+	appearance:menulist
+}
+
+input:before,textarea:before,select:before
+{
+	-webkit-appearance:initial;
+	appearance:initial;
+	color:#ddd
+}
+
+textarea
+{
+	resize:none
+}
+
+ul,
+menu,
+dir
+{
+	margin:0;
+	padding-left:0;
+	padding-left:0;
+	-webkit-appearance:none;
+	appearance:none
+}
+
+ol ul,
+ul ol,
+ul ul,
+ol ol
+{
+	margin-top:0;
+	margin-bottom:0;
+	padding-left:40px
+}
+
+body,
+html
+{
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0
+}
+
+strong,
+b,
+.txt-bold
+{
+	font-weight:500
+}
+
+h1
+{
+	font-size:20px
+}
+
+h2
+{
+	font-size:14px
+}
+
+h3
+{
+	font-size:18px
+}
+
+h4
+{
+	font-size:14px;
+	font-weight:400
+}
+
+h6
+{
+	font-size:11px
+}
+
+iframe
+{
+	border:0
+}
+
+p {
+	margin-top:0;
+	margin-block-end:0;
+	margin-bottom:0
+}
